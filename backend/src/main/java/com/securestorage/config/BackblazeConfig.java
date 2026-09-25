@@ -7,6 +7,7 @@ import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.http.urlconnection.UrlConnectionHttpClient;
 
 import java.net.URI;
 
@@ -37,6 +38,7 @@ public class BackblazeConfig {
                 .credentialsProvider(
                         StaticCredentialsProvider.create(credentials)
                 )
+                .httpClientBuilder(UrlConnectionHttpClient.builder())
                 .build();
     }
 }
