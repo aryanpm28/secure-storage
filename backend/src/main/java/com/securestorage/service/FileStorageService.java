@@ -630,18 +630,20 @@ public class FileStorageService {
         }
 
         if (bytes.length >= 8
-                && ((bytes[4] == 'm'
-                && bytes[5] == 'o'
-                && bytes[6] == 'o'
-                && bytes[7] == 'v')
-                || (bytes[4] == 'm'
-                && bytes[5] == 'd'
-                && bytes[6] == 'a'
-                && bytes[7] == 't')
-                || (bytes[4] == 'w'
-                && bytes[5] == 'i'
-                && bytes[6] == 'd'
-                && bytes[7] == 'e')) {
+                && (
+                    (bytes[4] == 'm'
+                        && bytes[5] == 'o'
+                        && bytes[6] == 'o'
+                        && bytes[7] == 'v')
+                    || (bytes[4] == 'm'
+                        && bytes[5] == 'd'
+                        && bytes[6] == 'a'
+                        && bytes[7] == 't')
+                    || (bytes[4] == 'w'
+                        && bytes[5] == 'i'
+                        && bytes[6] == 'd'
+                        && bytes[7] == 'e')
+                )) {
 
             return new MediaType("video", "quicktime");
         }
